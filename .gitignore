@@ -1,7 +1,14 @@
-node_modules/
-# /storage
-composer.phar
+/node_modules
+storage/framework/views/*
+storage/framework/session/*
+storage/framework/cache/*
+# /vendor
 .env
-.env.example
-.DS_Store
-Thumbs.db
+.phpunit.result.cache
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/.idea
+/.vscode
