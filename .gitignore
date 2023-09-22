@@ -1,4 +1,7 @@
 /node_modules
+/storage/framework/views/*
+/storage/framework/session/*
+/storage/framework/cache/*
 # /vendor
 .env
 .phpunit.result.cache
