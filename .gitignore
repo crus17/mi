@@ -1,5 +1,7 @@
 /node_modules
-/storage/framework/**/*.gitkeep
+/storage/framework/views/*
+/storage/framework/sessions/*
+/storage/framework/cache/*
 # /vendor
 .env
 .phpunit.result.cache
