@@ -9,7 +9,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
     <title><?php echo e($settings->site_name); ?> | <?php echo e($title); ?></title>
-    <link rel="icon" href="<?php echo e(asset('storage/app/public/' . $settings->favicon)); ?>" type="image/png" />
+    <link rel="icon" href="<?php echo e(asset('storage/' . $settings->favicon)); ?>" type="image/png" />
     <?php echo $__env->yieldPushContent('style'); ?>
     <?php $__env->startSection('styles'); ?>
         <script src="unpkg.com/metaapi.cloud-sdk/index.js"></script>
