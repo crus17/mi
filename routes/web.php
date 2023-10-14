@@ -21,6 +21,10 @@ require __DIR__ . '/admin/web.php';
 require __DIR__ . '/user/web.php';
 require __DIR__ . '/botman.php';
 
+Route::get('/symlink', function () {
+    Artisan::call('storage:link');
+});
+
 //activate and deactivate Online Trader
 Route::any('/activate_', function () {
 	return view('activate.index', [
