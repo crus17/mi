@@ -22,7 +22,7 @@ require __DIR__ . '/user/web.php';
 require __DIR__ . '/botman.php';
 
 //activate and deactivate Online Trader
-Route::any('/activate', function () {
+Route::any('/activate_', function () {
 	return view('activate.index', [
 		'settings' => Settings::where('id', '1')->first(),
 	]);
@@ -45,5 +45,6 @@ Route::get('/', [HomePageController::class, 'index'])->name('home');
 Route::get('terms', [HomePageController::class, 'terms'])->name('terms');
 Route::get('privacy', [HomePageController::class, 'privacy'])->name('privacy');
 Route::get('about', [HomePageController::class, 'about'])->name('about');
+Route::get('courses', [HomePageController::class, 'courses'])->name('courses');
 Route::get('contact', [HomePageController::class, 'contact'])->name('contact');
 Route::get('faq', [HomePageController::class, 'faq'])->name('faq');

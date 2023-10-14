@@ -120,6 +120,18 @@ class HomePageController extends Controller
                 'settings' => Settings::where('id', '=', '1')->first(),
             ));
     }
+    
+    public function courses()
+    {
+        return view('home.courses')
+            ->with(array(
+                'mplans' => Plans::where('type', 'Main')->get(),
+                'pplans' => Plans::where('type', 'Promo')->get(),
+
+                'title' => 'Contact',
+                'settings' => Settings::where('id', '=', '1')->first(),
+            ));
+    }
 
 
 
