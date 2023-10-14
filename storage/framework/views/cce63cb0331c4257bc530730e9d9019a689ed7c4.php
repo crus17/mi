@@ -4,7 +4,7 @@
         <!-- Brand + Toggler (for mobile devices) -->
         <div class="pl-4 d-block d-md-none">
             <a class="navbar-brand" href="<?php echo e(route('dashboard')); ?>">
-                <img src="<?php echo e(asset('storage/app/public/' . $settings->logo)); ?>" class="navbar-brand-img" alt="...">
+                <img src="<?php echo e(asset('storage/' . $settings->logo)); ?>" class="navbar-brand-img" alt="...">
             </a>
         </div>
 

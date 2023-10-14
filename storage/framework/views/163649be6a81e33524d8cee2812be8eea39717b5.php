@@ -3,7 +3,7 @@
     <!-- Sidenav header -->
     <div class="sidenav-header d-flex align-items-center">
         <a class="navbar-brand" href="<?php echo e(route('dashboard')); ?>">
-            <img src="<?php echo e(asset('storage/app/public/' . $settings->logo)); ?>" class="navbar-brand-img" alt="logo">
+            <img src="<?php echo e(asset('storage/' . $settings->logo)); ?>" class="navbar-brand-img" alt="logo">
         </a>
         <div class="ml-auto">
             <!-- Sidenav toggler -->

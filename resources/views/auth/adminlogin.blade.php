@@ -12,7 +12,7 @@
                 <div class="col-12 col-md-6 col-lg-6 col-sm-10 col-xl-6">
                     <div class="text-center">
                         <a href="/">
-                            <img src="{{ asset('storage/app/public/' . $settings->logo) }}" alt=""
+                            <img src="{{ asset('storage/' . $settings->logo) }}" alt=""
                                 class="mb-3 w-50">
                         </a>
                     </div>

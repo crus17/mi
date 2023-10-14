@@ -96,7 +96,7 @@
                                             <td>{{ $deposit->created_at->format('d M Y') }}
                                             </td>
                                             <td>
-                                                <a href="{{ asset('storage/app/public/' . $deposit->proof) }}"
+                                                <a href="{{ asset('storage/' . $deposit->proof) }}"
                                                     target="_blank" class="btn btn-info btn-sm m-1"
                                                     title="View payment screenshot">
                                                     <i class="fa fa-eye"></i>

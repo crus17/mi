@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
     <title><?php echo e($settings->site_name); ?> | <?php echo $__env->yieldContent('title'); ?></title>
 
-    <link rel="icon" href="<?php echo e(asset('storage/app/public/' . $settings->favicon)); ?>" type="image/png" />
+    <link rel="icon" href="<?php echo e(asset('storage/' . $settings->favicon)); ?>" type="image/png" />
     <?php $__env->startSection('styles'); ?>
 
         <link href="<?php echo e(asset('themes/purposeTheme/temp/css/bootstrap.min.css')); ?>" rel="stylesheet" type="text/css" />

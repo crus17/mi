@@ -19,7 +19,7 @@
                                     <div>
                                         <div class="text-center">
                                             <a href="/">
-                                                <img src="<?php echo e(asset('storage/app/public/' . $settings->logo)); ?>"
+                                                <img src="<?php echo e(asset('storage/' . $settings->logo)); ?>"
                                                     alt="Logo" class="w-50">
                                             </a>
                                         </div>

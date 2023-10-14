@@ -7,7 +7,7 @@
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('storage/app/public/' . $settings->favicon) }}" type="image/png" />
+    <link rel="icon" href="{{ asset('storage/' . $settings->favicon) }}" type="image/png" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $settings->site_name }} | @yield('title')</title>
 
@@ -63,9 +63,9 @@
                     </a>
                     <div class="hor-logo">
                         <a class="main-logo" href="{{ route('dashboard') }}">
-                            <img src="{{ asset('storage/app/public/' . $settings->logo) }}"
+                            <img src="{{ asset('storage/' . $settings->logo) }}"
                                 class="header-brand-img desktop-logo" alt="logo">
-                            <img src="{{ asset('storage/app/public/' . $settings->logo) }}"
+                            <img src="{{ asset('storage/' . $settings->logo) }}"
                                 class="header-brand-img desktop-logo-dark" alt="logo">
                         </a>
                     </div>
@@ -73,11 +73,11 @@
                 <div class="main-header-center">
                     <div class="responsive-logo">
                         <a href="{{ route('dashboard') }}">
-                            <img src="{{ asset('storage/app/public/' . $settings->favicon) }}" class="mobile-logo"
+                            <img src="{{ asset('storage/' . $settings->favicon) }}" class="mobile-logo"
                                 alt="logo">
                         </a>
                         <a href="{{ route('dashboard') }}">
-                            <img src="{{ asset('storage/app/public/' . $settings->favicon) }}" class="mobile-logo-dark"
+                            <img src="{{ asset('storage/' . $settings->favicon) }}" class="mobile-logo-dark"
                                 alt="logo">
                         </a>
                     </div>
@@ -186,13 +186,13 @@
                 <div class="main-sidebar-header main-container-1 active">
                     <div class="sidemenu-logo">
                         <a class="main-logo" href="{{ route('dashboard') }}">
-                            <img src="{{ asset('storage/app/public/' . $settings->logo) }}"
+                            <img src="{{ asset('storage/' . $settings->logo) }}"
                                 class="header-brand-img desktop-logo-dark" alt="logo">
-                            <img src="{{ asset('storage/app/public/' . $settings->logo) }}"
+                            <img src="{{ asset('storage/' . $settings->logo) }}"
                                 class="header-brand-img icon-logo-dark" alt="logo">
-                            <img src="{{ asset('storage/app/public/' . $settings->logo) }}"
+                            <img src="{{ asset('storage/' . $settings->logo) }}"
                                 class="header-brand-img desktop-logo" alt="logo">
-                            <img src="{{ asset('storage/app/public/' . $settings->logo) }}"
+                            <img src="{{ asset('storage/' . $settings->logo) }}"
                                 class="header-brand-img icon-logo" alt="logo">
                         </a>
                     </div>

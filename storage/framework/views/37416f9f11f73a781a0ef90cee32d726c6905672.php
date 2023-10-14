@@ -36,7 +36,7 @@
 
                 <div class="pt-2 mt-4 col-lg-6 col-md-5 mt-sm-0 pt-sm-0">
                     <div class="position-relative">
-                        <img src="<?php echo e(asset('storage/app/public/' . $content->getImage('b9158B', 'img_path'))); ?>"
+                        <img src="<?php echo e(asset('storage/' . $content->getImage('b9158B', 'img_path'))); ?>"
                             class="mx-auto roundedd img-fluid d-block" alt="">
                     </div>
                 </div>
@@ -419,7 +419,7 @@
                             <div class="m-2 overflow-hidden border-0 card roundedd">
                                 <div class="row align-items-center no-gutters">
                                     <div class="col-md-5">
-                                        <img src="<?php echo e(asset('storage/app/public/' . $testimony->picture)); ?>"
+                                        <img src="<?php echo e(asset('storage/' . $testimony->picture)); ?>"
                                             class="img-fluid w-75" alt="">
                                     </div>
                                     <!--end col-->

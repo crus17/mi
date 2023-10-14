@@ -21,7 +21,7 @@
         @forelse ($lessons as $less)
             <div class="col-md-4">
                 <div class="card ">
-                    <img src="{{ str_starts_with($less->thumbnail, 'http') ? $less->thumbnail : asset('storage/app/public/' . $less->thumbnail) }}"
+                    <img src="{{ str_starts_with($less->thumbnail, 'http') ? $less->thumbnail : asset('storage/' . $less->thumbnail) }}"
                         class="card-img-top" alt="course image">
                     <div class="card-body">
                         <h4 class=" font-weight-bolder">{{ $loop->iteration }}.

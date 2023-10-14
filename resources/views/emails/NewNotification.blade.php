@@ -3,7 +3,7 @@
 # {{ $salutaion ? $salutaion : "Hello" }} {{ $recipient}},
 
 @if ($attachment != null)
-    <img src="{{ $message->embed(asset('storage/app/public/'. $attachment)) }}">
+    <img src="{{ $message->embed(asset('storage/'. $attachment)) }}">
 @endif
 {!! $body !!}
 

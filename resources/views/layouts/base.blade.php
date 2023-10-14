@@ -15,7 +15,7 @@
     <meta itemprop="description" content="{{ $settings->description }}">
     <meta itemprop="image" content="{{ asset('themes/purposeTheme/temp/images/meta.png') }}">
 
-    <link rel="icon" href="{{ asset('storage/app/public/' . $settings->favicon) }}" type="image/png" />
+    <link rel="icon" href="{{ asset('storage/' . $settings->favicon) }}" type="image/png" />
     @section('styles')
 
         <link href="{{ asset('themes/purposeTheme/temp/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -54,7 +54,7 @@
             <!-- Logo container-->
             <div>
                 <a class="logo" href="/">
-                    <img src="{{ asset('storage/app/public/' . $settings->logo) }}" height="35" alt=""
+                    <img src="{{ asset('storage/' . $settings->logo) }}" height="35" alt=""
                         class="mr-2">
                 </a>
             </div>

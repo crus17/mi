@@ -124,12 +124,12 @@
                             <small class="text-muted">Document type</small>
                         </div>
                         <div class="mb-3 col-md-6">
-                            <img src="<?php echo e(asset('storage/app/public/' . $kyc->frontimg)); ?>" alt=""
+                            <img src="<?php echo e(asset('storage/' . $kyc->frontimg)); ?>" alt=""
                                 class="w-50 img-fluid d-block">
                             <small class="text-muted">Front View of Document</small>
                         </div>
                         <div class="mb-3 col-md-6">
-                            <img src="<?php echo e(asset('storage/app/public/' . $kyc->backimg)); ?>" alt=""
+                            <img src="<?php echo e(asset('storage/' . $kyc->backimg)); ?>" alt=""
                                 class="w-50 img-fluid d-block">
                             <small class="text-muted">Back View of Document</small>
                         </div>
