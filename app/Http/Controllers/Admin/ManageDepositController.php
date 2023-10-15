@@ -36,27 +36,14 @@ class ManageDepositController extends Controller
         //get settings 
         $settings = Settings::where('id', '=', '1')->first();
 
-        $response = $this->callServer('earnings', '/process-deposit', [
-            'referral_commission' => $settings->referral_commission,
-            'amount' => $deposit->amount,
-            'account_bal' => $user->account_bal,
-            'depositBonus' => $settings->deposit_bonus,
-        ]);
-
-        if ($response->failed()) {
-            return redirect()->back()->with('message', $response['message']);
-        }
-
-        $data = json_decode($response);
-        $earnings = floatval($data->data->earnings);
-        $bonus = intval($data->data->bonusToAdd);
-        $funds = intval($data->data->funding);
+        $funds = $deposit->amount;
+        $bonus = $settings->deposit_bonus;
 
         if ($deposit->user == $user->id) {
             //add funds to user's account
-            $user->account_bal = $funds;
+            $user->account_bal += $funds;
             $user->cstatus = 'Customer';
-            $user->bonus = $user->bonus + $bonus;
+            $user->bonus += $bonus;
             $user->save();
 
             if ($bonus != NULL and $bonus > 0) {

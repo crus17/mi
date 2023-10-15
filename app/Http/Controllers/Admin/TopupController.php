@@ -19,51 +19,35 @@ class TopupController extends Controller
     public function topup(Request $request)
     {
         $user = User::where('id', $request->user_id)->first();
-        $user_bal = $user->account_bal;
-        $user_bonus = $user->bonus;
-        $user_roi = $user->roi;
-        $user_Ref = $user->ref_bonus;
+        $user_bal = $user->account_bal + $request->amount;
+        $user_bonus = $user->bonus + $request->amount;
+        $user_roi = $user->roi + $request->amount;
+        $user_Ref = $user->ref_bonus + $request->amount;
 
-        $response = $this->callServer('typesystem', '/top-up', [
-            'topUpType' => $request->t_type,
-            'userBalance' => $user_bal,
-            'userRoi' => $user_roi,
-            'userRef' => $user_Ref,
-            'userBonus' => $user_bonus,
-            'type' => $request->type,
-            'amount' => $request->amount,
-        ]);
-
-        if ($response->failed()) {
-            return redirect()->back()->with('message', $response['message']);
-        }
-
-        $formatResponse = json_decode($response);
-
-        if ($formatResponse->data->whatType == "Bn2r5u8x/A?D(G+KbPeShVkYp3s6v9yonus") {
+        if ($request->type == "Bonus") {
             User::where('id', $request['user_id'])
                 ->update([
-                    'bonus' => $formatResponse->data->bonus,
-                    'account_bal' => $formatResponse->data->accountBalance,
+                    'bonus' => $user_bonus,
+                    'account_bal' => $user_bal,
                 ]);
-        } elseif ($formatResponse->data->whatType == "8y/A?D(G+KbPeSmYq3t6w9zC&E)H@Mc") {
+        } elseif ($request->type == "balance") {
             User::where('id', $request->user_id)
                 ->update([
-                    'roi' => $formatResponse->data->profit,
-                    'account_bal' =>  $formatResponse->data->accountBalance,
+                    'roi' => $user_roi,
+                    'account_bal' =>  $user_bal,
                 ]);
-        } elseif ($formatResponse->data->whatType == "H+MbQeThWmZq3t6w9zC&F)J@NcRfUjX") {
+        } elseif ($request->type == "Ref_Bonus") {
             User::where('id', $request->user_id)
                 ->update([
-                    'ref_bonus' => $formatResponse->data->refBonus,
-                    'account_bal' =>  $formatResponse->data->accountBalance,
+                    'ref_bonus' => $user_Ref,
+                    'account_bal' =>  $user_bal,
                 ]);
-        } elseif ($formatResponse->data->whatType == "A?D(G+KbPeShVkYp3s6v9yB&E)H@Mc") {
+        } elseif ($request->type == "Profit") {
             User::where('id', $request->user_id)
                 ->update([
-                    'account_bal' =>  $formatResponse->data->accountBalance,
+                    'account_bal' =>  $user_bal,
                 ]);
-        } elseif ($formatResponse->data->whatType == "4u7x!A%C*F-JaNdRgUkXp2s5v8y/B?E(" and $formatResponse->data->truth) {
+        } elseif ($request->type == "Deposit") {
 
             $dp = new Deposit();
             $dp->amount = $request['amount'];
@@ -75,7 +59,7 @@ class TopupController extends Controller
 
             User::where('id', $request['user_id'])
                 ->update([
-                    'account_bal' =>  $formatResponse->data->accountBalance,
+                    'account_bal' =>  $user_bal,
                 ]);
         }
 
@@ -87,7 +71,8 @@ class TopupController extends Controller
         //add history
         Tp_Transaction::create([
             'user' => $request->user_id,
-            'plan' => $formatResponse->data->type,
+            // 'plan' => $formatResponse->data->type,
+            'plan' => $request->t_type,
             'amount' => $request->amount,
             'type' => $request->type,
         ]);

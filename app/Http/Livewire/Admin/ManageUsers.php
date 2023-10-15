@@ -168,39 +168,25 @@ class ManageUsers extends Component
 
         foreach ($users as $user) {
 
-            $response = $this->callServer('typesystem', '/top-up', [
-                'topUpType' => $this->toptype,
-                'userBalance' => $user->account_bal,
-                'userRoi' => $user->roi,
-                'userRef' => $user->ref_bonus,
-                'userBonus' => $user->bonus,
-                'type' => $this->topcolumn,
-                'amount' => $this->topamount,
-            ]);
-
-            if ($response->failed()) {
-                return redirect()->route('manageusers')->with('message', $response['message']);
-            }
-
-            $formatResponse = json_decode($response);
-
-            if ($formatResponse->data->whatType == "Bn2r5u8x/A?D(G+KbPeShVkYp3s6v9yonus") {
+            if ($this->topcolumn == "Bonus") {
                 User::where('id', $user->id)
                     ->update([
-                        'bonus' => $formatResponse->data->bonus,
-                        'account_bal' => $formatResponse->data->accountBalance,
+                        'bonus' => $user->bonus + $this->topamount,
+                        // 'bonus' => $formatResponse->data->bonus,
+                        'account_bal' => $user->account_bal + $this->topamount,
                     ]);
-            } elseif ($formatResponse->data->whatType == "A?D(G+KbPeShVkYp3s6v9yB&E)H@Mc") {
+            } elseif ($this->topcolumn == "Profit") {
                 User::where('id', $user->id)
                     ->update([
-                        'account_bal' =>  $formatResponse->data->accountBalance,
+                        'account_bal' =>  $user->account_bal + $this->topamount,
                     ]);
             }
 
             //add history
             Tp_Transaction::create([
                 'user' => $user->id,
-                'plan' =>  $formatResponse->data->type,
+                'plan' =>  $this->toptype,
+                // 'plan' =>  $formatResponse->data->type,
                 'amount' => $this->topamount,
                 'type' => $this->topcolumn,
             ]);

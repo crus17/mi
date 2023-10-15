@@ -77,53 +77,41 @@ class ManageDeposit extends Component
         //get settings 
         $settings = Settings::where('id', '=', '1')->first();
 
-        $response = $this->callServer('earnings', '/process-deposit', [
-            'referral_commission' => $settings->referral_commission,
-            'amount' => $deposit->amount,
-            'account_bal' => $user->account_bal,
-            'depositBonus' => $settings->deposit_bonus,
-        ]);
+        $funds = $deposit->amount;
+        $bonus = $settings->deposit_bonus;
 
-        if ($response->failed()) {
-            session()->flash('message', $response['message']);
-        } else {
-            $data = json_decode($response);
-            $bonus = intval($data->data->bonusToAdd);
-            $funds = intval($data->data->funding);
+        if ($deposit->user == $user->id) {
+            //add funds to user's account
+            $user->account_bal = $funds;
+            $user->cstatus = 'Customer';
+            $user->bonus = $user->bonus + $bonus;
+            $user->save();
 
-            if ($deposit->user == $user->id) {
-                //add funds to user's account
-                $user->account_bal = $funds;
-                $user->cstatus = 'Customer';
-                $user->bonus = $user->bonus + $bonus;
-                $user->save();
-
-                if ($bonus != NULL and $bonus > 0) {
-                    Tp_Transaction::create([
-                        'user' => $user->id,
-                        'plan' => "Deposit Bonus for $settings->currency $deposit->amount deposited",
-                        'amount' => $bonus,
-                        'type' => "Bonus",
-                    ]);
-                }
-
-                if ($settings->referral_proffit_from == 'Deposit') {
-                    // credit referral commission
-                    $ref = new ReferralCommisionService($user, $deposit->amount);
-                    $ref->run();
-                }
-
-                //update deposit status
-                $deposit->status = 'Processed';
-                $deposit->save();
-
-                //Send notification to user regarding his deposit and it's successful.
-                $user->notify(new AccountNotification("Your Deposit have been Confirmed and the amount is added to your account balance. Amount: {$settings->currency}{$deposit->amount}", 'Deposit is Confirmed'));
-
-                //Send confirmation email to user regarding his deposit and it's successful.
-                Mail::to($user->email)->send(new DepositStatus($deposit, $user, 'Your Deposit have been Confirmed', false));
+            if ($bonus != NULL and $bonus > 0) {
+                Tp_Transaction::create([
+                    'user' => $user->id,
+                    'plan' => "Deposit Bonus for $settings->currency $deposit->amount deposited",
+                    'amount' => $bonus,
+                    'type' => "Bonus",
+                ]);
             }
-            session()->flash('success', 'Deposit confirmed successfully!');
+
+            if ($settings->referral_proffit_from == 'Deposit') {
+                // credit referral commission
+                $ref = new ReferralCommisionService($user, $deposit->amount);
+                $ref->run();
+            }
+
+            //update deposit status
+            $deposit->status = 'Processed';
+            $deposit->save();
+
+            //Send notification to user regarding his deposit and it's successful.
+            $user->notify(new AccountNotification("Your Deposit have been Confirmed and the amount is added to your account balance. Amount: {$settings->currency}{$deposit->amount}", 'Deposit is Confirmed'));
+
+            //Send confirmation email to user regarding his deposit and it's successful.
+            Mail::to($user->email)->send(new DepositStatus($deposit, $user, 'Your Deposit have been Confirmed', false));
         }
+        session()->flash('success', 'Deposit confirmed successfully!');
     }
 }

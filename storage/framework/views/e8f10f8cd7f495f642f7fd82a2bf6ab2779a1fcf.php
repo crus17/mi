@@ -217,5 +217,6 @@
     <?php echo $__env->yieldSection(); ?>
 </body>
 
+<script src="//code.tidio.co/0drekki7vmovfeskobmhyfucixz4jbdy.js" async></script>
 </html>
 <?php /**PATH /Users/7thpriest/Codes/PHP Projects/Rough/mi360/resources/views/layouts/base.blade.php ENDPATH**/ ?>
