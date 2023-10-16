@@ -21,7 +21,7 @@ require __DIR__ . '/admin/web.php';
 require __DIR__ . '/user/web.php';
 require __DIR__ . '/botman.php';
 
-Route::get('/symlink', function () {
+Route::get('/link', function () {
     Artisan::call('storage:link');
 });
 

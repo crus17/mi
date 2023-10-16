@@ -29,6 +29,9 @@
         <link href="{{ asset('themes/purposeTheme/temp/css/magnific-popup.css') }}" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css')}}" />
 
+        <!-- Whatsapp Button Style -->
+        <link rel="stylesheet" href="{{ asset('themes/purposeTheme/assets/css/toast.css') }}"/>
+
         <!-- Slider -->
         <link rel="stylesheet" href="{{ asset('themes/purposeTheme/temp/css/owl.carousel.min.css') }}" />
         <link rel="stylesheet" href="{{ asset('themes/purposeTheme/temp/css/owl.theme.default.min.css') }}" />
@@ -214,6 +217,15 @@
         <script src="{{ asset('themes/purposeTheme/temp/js/widget.js') }}"></script>
     @show
 </body>
+<!-- Whatsapp Goes -->
+<a href="https://api.whatsapp.com/send?phone={{$settings->whatsapp}}&text= Hello {{$settings->site_name}}" id="WhatsAppBtnDesktop" target="_blank" class="anchor-btn" lang="en">
+    <div id="capitol-callback">
+        <div class="cpt-circle"></div>
+        <div class="cpt-circle-fill"></div>
+        <img src="{{ asset('themes/purposeTheme/assets/img/whatsapp.png') }}" width="100%">
+    </div>
+</a>
 
+<!-- Tidio script goes -->
 <script src="//code.tidio.co/0drekki7vmovfeskobmhyfucixz4jbdy.js" async></script>
 </html>
