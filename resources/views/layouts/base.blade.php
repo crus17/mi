@@ -56,10 +56,16 @@
         <div class="container">
             <!-- Logo container-->
             <div>
-                <a class="logo" href="/">
-                    <img src="{{ asset('storage/' . $settings->logo) }}" height="35" alt=""
-                        class="mr-2">
+                <a class="logo d-none d-sm-block" href="/">
+                    <img src="{{ asset('storage/' . $settings->logo) }}" height="35" alt="" class="mr-2">
                 </a>
+                <a class="logo d-sm-none" href="/">
+                    <img src="{{ asset('storage/' . $settings->logo) }}" width="80" alt="">
+                </a>
+                <!-- <a class="logo d-sm-none" href="/">
+                    <img src="{{ asset('themes/purposeTheme/assets/img/logo.png') }}" height="25" alt="" class="mr-2">
+                    <span class="display-6 lead">{{ $settings->site_name}}</span>
+                </a> -->
             </div>
             @guest
                 <div class="buy-button">

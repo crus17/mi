@@ -56,7 +56,7 @@
             <div class="row align-items-center">
                 <div class="pt-2 mt-4 col-lg-5 col-md-5 mt-sm-0 pt-sm-0">
                     <div class="position-relative">
-                        <img src="<?php echo e(asset('storage/app/public/' . $content->getImage('iAwfKe', 'img_path'))); ?>"
+                        <img src="<?php echo e(asset('storage/' . $content->getImage('iAwfKe', 'img_path'))); ?>"
                             class="mx-auto rounded img-fluid d-block" alt="">
                         <div class="play-icon">
                             <!-- <a href="http://vimeo.com/287684225" class="play-btn video-play-icon">

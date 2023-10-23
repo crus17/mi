@@ -57,10 +57,16 @@
         <div class="container">
             <!-- Logo container-->
             <div>
-                <a class="logo" href="/">
-                    <img src="<?php echo e(asset('storage/' . $settings->logo)); ?>" height="35" alt=""
-                        class="mr-2">
+                <a class="logo d-none d-sm-block" href="/">
+                    <img src="<?php echo e(asset('storage/' . $settings->logo)); ?>" height="35" alt="" class="mr-2">
                 </a>
+                <a class="logo d-sm-none" href="/">
+                    <img src="<?php echo e(asset('storage/' . $settings->logo)); ?>" width="80" alt="">
+                </a>
+                <!-- <a class="logo d-sm-none" href="/">
+                    <img src="<?php echo e(asset('themes/purposeTheme/assets/img/logo.png')); ?>" height="25" alt="" class="mr-2">
+                    <span class="display-6 lead"><?php echo e($settings->site_name); ?></span>
+                </a> -->
             </div>
             <?php if(auth()->guard()->guest()): ?>
                 <div class="buy-button">
