@@ -340,6 +340,7 @@
 
     <!-- Crypto price Section Start -->
 
+    <!--
     <section class="mt-5 overflow-hidden section bg-soft-primary">
         <div class="container">
             <div class="row justify-content-center">
@@ -350,7 +351,6 @@
                             <?php echo e($content->getContent('wOS1ve', 'description')); ?></p>
                     </div>
                 </div>
-                <!--end col-->
             </div>
 
             <div class="row align-items-center">
@@ -361,7 +361,6 @@
                                 background-color="#01395e"></coingecko-coin-ticker-widget>
                         </div>
 
-                        <!--pattern end-->
                     </div>
                 </div>
 
@@ -372,9 +371,7 @@
                             <coingecko-coin-ticker-widget coin-id="ethereum" currency="usd" width="0"
                                 locale="en" background-color="#01395e"></coingecko-coin-ticker-widget>
                         </div>
-                        <!--pattern start-->
 
-                        <!--pattern end-->
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -383,14 +380,13 @@
                             <coingecko-coin-ticker-widget coin-id="litecoin" currency="usd" width="0"
                                 locale="en" background-color="#01395e"></coingecko-coin-ticker-widget>
                         </div>
-                        <!--pattern start-->
 
-                        <!--pattern end-->
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    -->
 
     <!-- Crypto price Section Start  End-->
 
