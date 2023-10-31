@@ -50,5 +50,8 @@ Route::get('terms', [HomePageController::class, 'terms'])->name('terms');
 Route::get('privacy', [HomePageController::class, 'privacy'])->name('privacy');
 Route::get('about', [HomePageController::class, 'about'])->name('about');
 Route::get('courses', [HomePageController::class, 'courses'])->name('courses');
+Route::get('industries', [HomePageController::class, 'industries'])->name('industries');
+Route::get('portfolios', [HomePageController::class, 'portfolios'])->name('portfolios');
+Route::get('partners', [HomePageController::class, 'partners'])->name('partners');
 Route::get('contact', [HomePageController::class, 'contact'])->name('contact');
 Route::get('faq', [HomePageController::class, 'faq'])->name('faq');

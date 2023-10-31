@@ -53,26 +53,130 @@
     <!-- About Start -->
     <section class="section">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="pt-2 mt-4 col-lg-5 col-md-5 mt-sm-0 pt-sm-0">
-                    <div class="position-relative">
-                        <img src="<?php echo e(asset('storage/' . $content->getImage('iAwfKe', 'img_path'))); ?>"
-                            class="mx-auto rounded img-fluid d-block" alt="">
-                        <div class="play-icon">
-                            <!-- <a href="http://vimeo.com/287684225" class="play-btn video-play-icon">
-                                                <i class="bg-white shadow mdi mdi-play text-primary rounded-circle"></i>
-                                            </a> -->
-                        </div>
-                    </div>
-                </div>
-                <!--end col-->
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="border-0 rounded card">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>About <?php echo e($settings->site_name); ?>: Your Partner in Financial Success</b></h5>
+                            <p class="text-muted">Welcome to <?php echo e($settings->site_name); ?>, where your financial success is our top priority. 
+                                We're not just an investment platform; we're your partner on a journey to prosperity. 
+                                At <?php echo e($settings->site_name); ?>, we believe that everyone should have the opportunity to achieve their 
+                                financial dreams, and we've dedicated ourselves to making that a reality.</p>
+                            
 
-                <div class="pt-2 mt-4 col-lg-7 col-md-7 mt-sm-0 pt-sm-0">
-                    <div class="section-title ml-lg-4">
-                        <h4 class="mb-4 title"><?php echo e($content->getContent('epJ4LI', 'title')); ?></h4>
-                        <p class="text-muted"><?php echo e($content->getContent('epJ4LI', 'description')); ?></p>
-                        <a href="<?php echo e(url('/login')); ?>" class="mt-3 btn btn-primary">Invest now<i
-                                class="mdi mdi-chevron-right"></i></a>
+
+                            <h5 class="card-title"><b>Our Mission:</b> </h5>
+                            <p class="text-muted"><?php echo e($settings->site_name); ?> was born from a simple yet profound mission: 
+                                to empower individuals to take control of their financial future. 
+                                We understand that the world of investments can be complex and intimidating, 
+                                but we're here to change that. Our mission is to demystify finance, make investing 
+                                accessible to all, and provide the tools you need to succeed.</p>
+                            
+                            <h5 class="card-title"><b>What Sets Us Apart</b> </h5>
+                            <p class="text-muted">
+                                <em>Expertise:</em> We're proud of our team of financial experts 
+                                who bring a wealth of knowledge and experience to the table. They curate investment 
+                                opportunities, manage risks, and work tirelessly to ensure your financial goals are 
+                                within reach.
+                            </p>
+                            <p class="text-muted">
+                                <em>Customization:</em> We recognize that financial goals are personal. That's why we 
+                                offer a diverse range of investment portfolios, each designed to cater to different 
+                                aspirations and risk tolerances. Your journey with <?php echo e($settings->site_name); ?> is as unique as you are.
+                            </p>
+                            <p class="text-muted">
+                                <em>Transparency:</em> We're committed to transparency and accountability. 
+                                Your investments should never be a mystery. Our performance reports are accessible, 
+                                and we're always ready to answer your questions.
+                            </p>
+                            
+
+                            <h5 class="card-title"><b>Your Journey with <?php echo e($settings->site_name); ?></b></h5>
+                            <p class="text-muted">When you join <?php echo e($settings->site_name); ?>, you're not just investing; 
+                                you're partnering with a team that cares about your financial success. 
+                                Whether you're seeking stable income, robust growth, or a balanced approach, 
+                                we've got you covered.</p>
+                            
+                            <h5 class="card-title"><b>A Path to Financial Prosperity</b></h5>
+                            <p class="text-muted">We offer a range of investment portfolios, each with 
+                                its unique blend of risk and reward. Choose the one that matches your 
+                                financial goals and risk appetite:</p>
+                            <ol class="text-muted" type="1">
+                                <li><b>Basic Portfolio:</b> Ideal for newcomers, offering steady growth and a low entry point.</li>
+                                <li><b>Growth Portfolio (3-Month):</b> Perfect for those seeking moderate returns over a short term.</li>
+                                <li><b>Growth Portfolio (9-Month):</b> Tailored for a balance between risk and reward over a mid-term horizon.</li>
+                                <li><b>Growth Portfolio (18-Month):</b> Designed for substantial gains over a more extended period.</li>
+                                <li><b>Growth Portfolio (2-Year):</b> For those with an eye on substantial growth and long-term gains.</li>
+                                
+                            </ol>
+
+                            <h5 class="card-title"><b>How We Invest Your Funds</b></h5>
+                            <p class="text-muted">At <?php echo e($settings->site_name); ?>, we understand that you may be curious about how we invest 
+                                your funds. We take a strategic approach, diversifying investments across industries 
+                                with high returns. Our investments are grounded in the real world, backed by 
+                                reputable partners, and designed to deliver the returns we promise. Your financial 
+                                security is our utmost priority, and we work diligently to ensure that your 
+                                investments grow as you envision.</p>
+
+                            <h5 class="card-title"><b>Your Financial Security, Guaranteed</b></h5>
+                            <p class="text-muted">At <?php echo e($settings->site_name); ?>, your financial security is paramount. We don't just offer 
+                                investments; we offer peace of mind. Your investments are not only secure but also come 
+                                with the assurance of guaranteed returns. We employ advanced risk management strategies 
+                                and due diligence to protect your capital, ensuring you can sleep soundly at night.</p>
+                            
+                                
+                            <h5 class="card-title"><b>ROI Distribution and Capital Availability:</b></h5>
+                            <p class="text-muted">At <?php echo e($settings->site_name); ?>, we understand the importance of flexibility and 
+                                accessibility when it comes to your investments. To ensure a seamless and 
+                                user-friendly experience, we credit the Return on Investment (ROI) for each investment 
+                                portfolio to your account balance on either a daily or weekly basis, depending on 
+                                the portfolio type you choose.
+                            </p>
+
+                            <h5 class="card-title"><b>Distribution Frequencies:</b></h5>
+                            <ol class="text-muted" type="1">
+                                <li>
+                                    <b>Daily ROI:</b> For certain portfolios, you'll receive your ROI on a daily basis. 
+                                    This allows you to see immediate growth in your investments and make real-time decisions 
+                                    with your returns.
+                                </li>
+                                <li>
+                                    <b>Weekly ROI:</b> Other portfolios offer a weekly ROI distribution. This ensures that you
+                                     receive returns regularly, providing you with a steady income stream.
+                                </li>
+                            </ol>
+
+                            <h5 class="card-title"><b>Your Control, Your Choice:</b></h5>
+                            <p class="text-muted">Your ROI is credited to your account balance, and here's where it gets exciting:
+                                 you have the freedom to decide how you want to utilize those returns. You can:</p>
+                            <ol class="text-muted" type="1">
+                                <li><b>Withdraw:</b> If you need the returns for other purposes, you can withdraw them. 
+                                    Your funds will be available for withdrawal, and you can enjoy the fruits of your 
+                                    investment.</li>
+                                <li><b>Reinvest:</b> Looking to compound your earnings? You have the option to reinvest your ROI, 
+                                    allowing your investments to grow even faster.</li>
+                                <li><b>Utilize:</b> Maybe you have other plans for your returns, like participating in other investment 
+                                    opportunities or making purchases. You can use your ROI as you see fit.</li>
+                            </ol>
+
+                            <h5 class="card-title"><b>Invested Capital Availability:</b></h5>
+                            <p class="text-muted" >We believe in giving you full control and access to your investments. Therefore, on 
+                                the expiration of the investment period for your chosen portfolio, the initial 
+                                capital you invested will become available to you. This means that you have the 
+                                opportunity to reassess your financial goals and make new investment decisions.</p>
+                            <p class="text-muted" >At <?php echo e($settings->site_name); ?>, our mission is to make your financial journey as smooth and customizable 
+                                as possible. Your financial success is our priority, and that's why we offer you 
+                                the flexibility to manage your ROI and access your invested capital when it matters 
+                                most.</p>
+
+                            <h5 class="card-title"><b>Join Us Today</b></h5>
+                            <p class="text-muted" >Your path to financial prosperity starts with <?php echo e($settings->site_name); ?>. We're here to guide you, 
+                                support you, and celebrate your success. Whether you're looking for income, growth,
+                                 or a bit of both, we're ready to help you achieve your financial dreams.</p>
+
+                            <p class="text-muted" >Invest with confidence. Invest with <?php echo e($settings->site_name); ?>.</p>
+
+                        </div>
                     </div>
                 </div>
                 <!--end col-->

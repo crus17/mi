@@ -82,7 +82,7 @@
                     <div class="text-center border-0 rounded card">
                         <div class="card-body">
                             <div class="p-3 shadow bg-soft-primary roundedd d-inline-block">
-                                <img src="<?php echo e(asset('themes/purposeTheme/temp/images/icon/key.svg')); ?>" class="avatar avatar-small"
+                                <img src="<?php echo e(asset('themes/purposeTheme/temp/images/icon/customer-service.svg')); ?>" class="avatar avatar-small"
                                     alt="">
                             </div>
                             <div class="mt-4">
@@ -101,7 +101,7 @@
                     <div class="text-center border-0 rounded card">
                         <div class="card-body">
                             <div class="p-3 shadow bg-soft-primary roundedd d-inline-block">
-                                <img src="<?php echo e(asset('themes/purposeTheme/temp/images/icon/locked.svg')); ?>" class="avatar avatar-small"
+                                <img src="<?php echo e(asset('themes/purposeTheme/temp/images/icon/art-and-design.svg')); ?>" class="avatar avatar-small"
                                     alt="">
                             </div>
                             <div class="mt-4">
@@ -290,7 +290,7 @@
                             <div class="p-0 card-body">
                                 <span
                                     class="px-4 py-2 mb-0 rounded-lg d-inline-block bg-soft-primary h6 text-primary"><?php echo e($plan->name); ?></span>
-                                <h2 class="mt-3 mb-0 font-weight-bold"><?php echo e($settings->currency); ?> <?php echo e($plan->price); ?>
+                                <h2 class="mt-3 mb-0 font-weight-bold"><?php echo e($settings->currency); ?> <?php echo e(number_format($plan->price, 0)); ?>
 
                                 </h2>
                                 <p class="text-muted"><?php echo e($plan->expiration); ?></p>
@@ -301,11 +301,11 @@
                                     <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
                                                 class="align-middle uil uil-check-circle"></i></span>Min. Possible
                                         deposit:
-                                        <?php echo e($settings->currency); ?><?php echo e($plan->min_price); ?></li>
+                                        <?php echo e($settings->currency); ?><?php echo e(number_format($plan->min_price, 0)); ?></li>
                                     <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
                                                 class="align-middle uil uil-check-circle"></i></span>Max. Possible
                                         deposit:
-                                        <?php echo e($settings->currency); ?><?php echo e($plan->max_price); ?></li>
+                                        <?php echo e($settings->currency); ?><?php echo e(number_format($plan->max_price, 0)); ?></li>
                                     <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
                                                 class="align-middle uil uil-check-circle"></i></span>
                                         Minimum return <?php echo e($plan->minr); ?> %</li>
@@ -313,7 +313,7 @@
                                                 class="align-middle uil uil-check-circle"></i></span>
                                         Maximum return <?php echo e($plan->maxr); ?> %</li>
                                     <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
-                                                class="align-middle uil uil-check-circle"></i></span><?php echo e($settings->currency); ?><?php echo e($plan->gift); ?>
+                                                class="align-middle uil uil-check-circle"></i></span><?php echo e($settings->currency); ?><?php echo e(number_format($plan->gift, 0)); ?>
 
                                         Gift Bonus</li>
                                 </ul>

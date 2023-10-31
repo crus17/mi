@@ -102,7 +102,9 @@
                 <!-- Navigation Menu-->
                 <ul class="navigation-menu">
                     <li><a href="<?php echo e(url('/about')); ?>">About us</a></li>
-                    <li><a href="#pricing">Plans</a></li>
+                    <li><a href="<?php echo e(url('/portfolios')); ?>">Portfolios</a></li>
+                    <li><a href="<?php echo e(url('/industries')); ?>">Our Industries</a></li>
+                    <li><a href="<?php echo e(url('/partners')); ?>">Partners</a></li>
                     <li><a href="<?php echo e(url('/faq')); ?>">Faq</a></li>
                     <li><a href="<?php echo e(url('/contact')); ?>">Contact</a></li>
                 </ul>
@@ -166,6 +168,9 @@
                         <li><a href="<?php echo e(url('/faq')); ?>" class="text-foot"><i
                                     class="mr-1 mdi mdi-chevron-right"></i>
                                 Faq</a></li>
+                        <li><a href="<?php echo e(url('/terms')); ?>" class="text-foot"><i
+                                    class="mr-1 mdi mdi-chevron-right"></i>
+                                Privacy and Policy</a></li>
                     </ul>
                 </div>
                 <!--end col-->

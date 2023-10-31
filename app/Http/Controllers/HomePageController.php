@@ -120,6 +120,37 @@ class HomePageController extends Controller
                 'settings' => Settings::where('id', '=', '1')->first(),
             ));
     }
+
+    //Our Industries route
+    public function industries()
+    {
+        return view('home.industries')
+            ->with(array(
+                'title' => 'Industries',
+                'settings' => Settings::where('id', '=', '1')->first(),
+            ));
+    }
+
+    //Portfolio route
+    public function portfolios()
+    {
+        return view('home.portfolios')
+            ->with(array(
+                'plans' => Plans::all(),
+                'title' => 'Portfolios',
+                'settings' => Settings::where('id', '=', '1')->first(),
+            ));
+    }
+
+    //Partners route
+    public function partners()
+    {
+        return view('home.partners')
+            ->with(array(
+                'title' => 'Partners',
+                'settings' => Settings::where('id', '=', '1')->first(),
+            ));
+    }
     
     public function courses()
     {

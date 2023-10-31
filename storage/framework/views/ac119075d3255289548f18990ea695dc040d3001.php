@@ -49,7 +49,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-9">
-                    <div class="border-0 rounded shadow card">
+                    <div class="border-0 rounded card">
                         <div class="card-body">
                             <h5 class="card-title"><b>Our Commitment to You:</b></h5>
                             <p class="text-muted">Thank you for showing interest in our service. In order for us to

@@ -100,7 +100,9 @@
                 <!-- Navigation Menu-->
                 <ul class="navigation-menu">
                     <li><a href="{{ url('/about') }}">About us</a></li>
-                    <li><a href="#pricing">Plans</a></li>
+                    <li><a href="{{ url('/portfolios') }}">Portfolios</a></li>
+                    <li><a href="{{ url('/industries') }}">Our Industries</a></li>
+                    <li><a href="{{ url('/partners') }}">Partners</a></li>
                     <li><a href="{{ url('/faq') }}">Faq</a></li>
                     <li><a href="{{ url('/contact') }}">Contact</a></li>
                 </ul>
@@ -164,6 +166,9 @@
                         <li><a href="{{ url('/faq') }}" class="text-foot"><i
                                     class="mr-1 mdi mdi-chevron-right"></i>
                                 Faq</a></li>
+                        <li><a href="{{ url('/terms') }}" class="text-foot"><i
+                                    class="mr-1 mdi mdi-chevron-right"></i>
+                                Privacy and Policy</a></li>
                     </ul>
                 </div>
                 <!--end col-->
