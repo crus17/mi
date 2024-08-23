@@ -20,7 +20,7 @@
                         <div class="d-inline">
                             <a href="{{ route('swaphistory') }}" class="float-right btn btn-primary btn-sm">Transactions</a>
                         </div>
-                        <p class="text-{{ $text }}">
+                        <p class="text-dark">
                             Earn even more when you swap your Account balance to and from crypto.
                         </p>
                         <div class="row">
@@ -31,7 +31,7 @@
 
                                         </span>
                                         <div>
-                                            <p class="mb-1 text-{{ $text }}">
+                                            <p class="mb-1 text-dark">
                                                 <b>{{ $settings->currency }}{{ number_format(Auth::user()->account_bal, 2, '.', ',') }}</b>
                                             </p>
                                             <small class="text-muted">Account Balance</small>
@@ -48,7 +48,7 @@
                                                     src="https://img.icons8.com/color/48/000000/bitcoin--v1.png" />
                                             </span>
                                             <div>
-                                                <p class="mb-1 text-{{ $text }}"><b>{{ round($cbalance->btc, 8) }}
+                                                <p class="mb-1 text-dark"><b>{{ round($cbalance->btc, 8) }}
                                                         BTC</b></p>
                                                 <small class="text-muted usdelement" id="btc"></small>
                                             </div>
@@ -65,7 +65,7 @@
                                                     src="https://img.icons8.com/fluency/48/000000/ethereum.png" />
                                             </span>
                                             <div>
-                                                <p class="mb-1 text-{{ $text }}">
+                                                <p class="mb-1 text-dark">
                                                     <b>{{ round($cbalance->eth, 8) }} ETH</b>
                                                 </p>
                                                 <small class="text-muted usdelement" id="eth"></small>
@@ -83,7 +83,7 @@
                                                     src="https://img.icons8.com/fluency/48/000000/litecoin.png" />
                                             </span>
                                             <div>
-                                                <p class="mb-1 text-{{ $text }}">
+                                                <p class="mb-1 text-dark">
                                                     <b>{{ round($cbalance->ltc, 8) }} LTC</b>
                                                 </p>
                                                 <small class="text-muted usdelement" id="ltc"></small>
@@ -101,7 +101,7 @@
                                                     src="https://img.icons8.com/cotton/64/000000/chainlink.png" />
                                             </span>
                                             <div>
-                                                <p class="mb-1 text-{{ $text }}">
+                                                <p class="mb-1 text-dark">
                                                     <b>{{ round($cbalance->link, 8) }} LINK</b>
                                                 </p>
                                                 <small class="text-muted usdelement" id="link"></small>
@@ -120,7 +120,7 @@
                                                     src="https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png" />
                                             </span>
                                             <div>
-                                                <p class="mb-1 text-{{ $text }}">
+                                                <p class="mb-1 text-dark">
                                                     <b>{{ round($cbalance->bnb, 8) }} BNB</b>
                                                 </p>
                                                 <small class="text-muted usdelement" id="bnb"></small>
@@ -139,7 +139,7 @@
                                                     src="https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png" />
                                             </span>
                                             <div>
-                                                <p class="mb-1 text-{{ $text }}">
+                                                <p class="mb-1 text-dark">
                                                     <b>{{ round($cbalance->ada, 8) }} ADA</b>
                                                 </p>
                                                 <small class="text-muted usdelement" id="ada"></small>
@@ -158,7 +158,7 @@
                                                     src="https://dynamic-assets.coinbase.com/6ad513d3c9108b163cf0a4c9fd3441cadcb9cf656ea7b9fb333eb7e4a94cd503528e0a94188285d31aedfc392f0793fd4161f7ad4e04d5f6b82e4d70a314d295/asset_icons/80f3d2256652f5ccd680fc48702d130dd01f1bd7c9737fac560a02949efac3b9.png" />
                                             </span>
                                             <div>
-                                                <p class="mb-1 text-{{ $text }}">
+                                                <p class="mb-1 text-dark">
                                                     <b>{{ round($cbalance->aave, 8) }} AAVE</b>
                                                 </p>
                                                 <small class="text-muted usdelement" id="aave"></small>
@@ -176,7 +176,7 @@
                                                     src="https://img.icons8.com/color/48/000000/tether--v2.png" />
                                             </span>
                                             <div>
-                                                <p class="mb-1 text-{{ $text }}">
+                                                <p class="mb-1 text-dark">
                                                     <b>{{ round($cbalance->usdt, 8) }} USDT</b>
                                                 </p>
                                                 <small
@@ -196,7 +196,7 @@
                                                     src="https://img.icons8.com/material-sharp/24/000000/bitcoin.png" />
                                             </span>
                                             <div>
-                                                <p class="mb-1 text-{{ $text }}">
+                                                <p class="mb-1 text-dark">
                                                     <b>{{ round($cbalance->bch, 8) }} BCH</b>
                                                 </p>
                                                 <small class="text-muted usdelement" id="bch"></small>
@@ -214,7 +214,7 @@
                                                     src="https://img.icons8.com/fluency/48/000000/ripple.png" />
                                             </span>
                                             <div>
-                                                <p class="mb-1 text-{{ $text }}">
+                                                <p class="mb-1 text-dark">
                                                     <b>{{ round($cbalance->xrp, 8) }} XRP</b>
                                                 </p>
                                                 <small class="text-muted usdelement" id="xrp"></small>
@@ -232,7 +232,7 @@
                                                     src="https://img.icons8.com/ios/50/000000/stellar.png" />
                                             </span>
                                             <div>
-                                                <p class="mb-1 text-{{ $text }}">
+                                                <p class="mb-1 text-dark">
                                                     <b>{{ round($cbalance->xlm, 8) }} XLM</b>
                                                 </p>
                                                 <small class="text-muted usdelement" id="xlm"></small>
@@ -256,8 +256,8 @@
                                 <form method="POST" action="javascript:void(0)" id="exchnageform">
                                     @csrf
                                     <div class="form-group">
-                                        <p class="text-{{ $text }}">Source Account</p>
-                                        <select class="form-control text-{{ $text }} " name="source"
+                                        <p class="text-dark">Source Account</p>
+                                        <select class="form-control text-dark " name="source"
                                             id="sourceasset">
                                             @if ($moresettings->btc == 'enabled')
                                                 <option value="btc">BTC</option>
@@ -297,8 +297,8 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <p class="text-{{ $text }}">Destination Account</p>
-                                        <select name="destination" class="form-control text-{{ $text }} "
+                                        <p class="text-dark">Destination Account</p>
+                                        <select name="destination" class="form-control text-dark "
                                             id="destinationasset">
                                             <option value="usd">USD</option>
                                             @if ($moresettings->btc == 'enabled')
@@ -335,23 +335,23 @@
                                                 <option value="usdt">USDT</option>
                                             @endif
                                         </select>
-                                        <small class="text-{{ $text }}">NOTE:USD is your account balance.</small>
+                                        <small class="text-dark">NOTE:USD is your account balance.</small>
                                     </div>
 
                                     <div class="form-group">
-                                        <p class="text-{{ $text }}">Amount</p>
+                                        <p class="text-dark">Amount</p>
                                         <input type="text" name="amount"
-                                            class="form-control text-{{ $text }} "
+                                            class="form-control text-dark "
                                             placeholder="Enter amount of btc" id="amount">
                                     </div>
                                     <div class="form-group">
-                                        <p class="text-{{ $text }}">You will get</p>
-                                        <input type="text" class="form-control text-{{ $text }} "
+                                        <p class="text-dark">You will get</p>
+                                        <input type="text" class="form-control text-dark "
                                             placeholder="Quantity of usd" id="quantity" readonly </div>
                                         <input type="hidden" id="realquantity" name="quantity">
                                         <div class="form-group">
                                             <span class="mb-1 ml-2 caption">
-                                                <span class="text-{{ $text }}"><b>Fees =
+                                                <span class="text-dark"><b>Fees =
                                                         {{ $moresettings->fee }}%</b></span>
                                             </span>
                                         </div>
@@ -378,7 +378,6 @@
             "symbol": "COINBASE:BTCUSD",
             "interval": "1",
             "timezone": "Etc/UTC",
-            "theme": '<?php echo $bg; ?>',
             "style": "9",
             "locale": "en",
             "toolbar_bg": "#f1f3f6",

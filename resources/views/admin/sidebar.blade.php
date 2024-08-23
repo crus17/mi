@@ -79,151 +79,170 @@
                         </a>
                     </li>
 
-                    @if ($mod['subscription'])
+                    @if(Auth('admin')->User()->type == 'Admin')
                         <li
-                            class="nav-item {{ request()->routeIs('msubtrade') ? 'active' : '' }} {{ request()->routeIs('tsettings') ? 'active' : '' }} {{ request()->routeIs('tacnts') ? 'active' : '' }} {{ request()->routeIs('subview') ? 'active' : '' }}">
-                            <a data-toggle="collapse" href="#mgacnt">
-                                <i class="fa fa-sync-alt"></i>
-                                <p>MAM - Copytrading</p>
-                                <span class="caret"></span>
+                            class="nav-item {{ request()->routeIs('paymentview') ? 'active' : '' }} {{ request()->routeIs('viewkyc') ? 'active' : '' }}">
+                            <a href="{{ route('paymentview') }}">
+                                <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                <p>Payment Settings</p>
                             </a>
-                            <div class="collapse" id="mgacnt">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="{{ route('msubtrade') }}">
-                                            <span class="sub-item">Trading-Accounts</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('tsettings') }}">
-                                            <span class="sub-item">Trading Settings</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('subview') }}">
-                                            <span class="sub-item">Fee Settings</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                        </li>
+                        <li
+                            class="nav-item {{ request()->routeIs('appsettingshow') ? 'active' : '' }} {{ request()->routeIs('viewkyc') ? 'active' : '' }}">
+                            <a href="{{ route('appsettingshow') }}">
+                                <i class="fa fa-cog" aria-hidden="true"></i>
+                                <p>App Settings</p>
+                            </a>
                         </li>
                     @endif
-                    @if ($mod['signal'])
+
+                    @if(Auth('admin')->User()->type == 'Super Admin')
+                        @if ($mod['subscription'])
+                            <li
+                                class="nav-item {{ request()->routeIs('msubtrade') ? 'active' : '' }} {{ request()->routeIs('tsettings') ? 'active' : '' }} {{ request()->routeIs('tacnts') ? 'active' : '' }} {{ request()->routeIs('subview') ? 'active' : '' }}">
+                                <a data-toggle="collapse" href="#mgacnt">
+                                    <i class="fa fa-sync-alt"></i>
+                                    <p>MAM - Copytrading</p>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="collapse" id="mgacnt">
+                                    <ul class="nav nav-collapse">
+                                        <li>
+                                            <a href="{{ route('msubtrade') }}">
+                                                <span class="sub-item">Trading-Accounts</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('tsettings') }}">
+                                                <span class="sub-item">Trading Settings</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('subview') }}">
+                                                <span class="sub-item">Fee Settings</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        @endif
+                        @if ($mod['signal'])
+                            <li
+                                class="nav-item {{ request()->routeIs('signals') ? 'active' : '' }} {{ request()->routeIs('signal.settings') ? 'active' : '' }} {{ request()->routeIs('signal.subs') ? 'active' : '' }}">
+                                <a data-toggle="collapse" href="#signals">
+                                    <i class="fa fa-signal"></i>
+                                    <p>Signal Provider</p>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="collapse" id="signals">
+                                    <ul class="nav nav-collapse">
+                                        <li>
+                                            <a href="{{ route('signals') }}">
+                                                <span class="sub-item">Trade Signals</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('signal.subs') }}">
+                                                <span class="sub-item">Subscribers</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('signal.settings') }}">
+                                                <span class="sub-item">Settings</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        @endif
+                        @if ($mod['membership'])
+                            <li
+                                class="nav-item {{ request()->routeIs('categories') ? 'active' : '' }} {{ request()->routeIs('courses') ? 'active' : '' }} {{ request()->routeIs('lessons') ? 'active' : '' }}">
+                                <a data-toggle="collapse" href="#meme">
+                                    <i class="fa fa-book-reader"></i>
+                                    <p>Membership</p>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="collapse" id="meme">
+                                    <ul class="nav nav-collapse">
+                                        <li>
+                                            <a href="{{ route('categories') }}">
+                                                <span class="sub-item">Categories</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('courses') }}">
+                                                <span class="sub-item">Courses</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('less.nocourse') }}">
+                                                <span class="sub-item">Lessons</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        @endif
                         <li
-                            class="nav-item {{ request()->routeIs('signals') ? 'active' : '' }} {{ request()->routeIs('signal.settings') ? 'active' : '' }} {{ request()->routeIs('signal.subs') ? 'active' : '' }}">
-                            <a data-toggle="collapse" href="#signals">
-                                <i class="fa fa-signal"></i>
-                                <p>Signal Provider</p>
+                            class="nav-item {{ request()->routeIs('task') ? 'active' : '' }} {{ request()->routeIs('mtask') ? 'active' : '' }} {{ request()->routeIs('viewtask') ? 'active' : '' }}">
+                            <a data-toggle="collapse" href="#task">
+                                <i class="fas fa-align-center"></i>
+                                <p>CRM</p>
                                 <span class="caret"></span>
                             </a>
-                            <div class="collapse" id="signals">
+                            <div class="collapse" id="task">
                                 <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="{{ route('signals') }}">
-                                            <span class="sub-item">Trade Signals</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('signal.subs') }}">
-                                            <span class="sub-item">Subscribers</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('signal.settings') }}">
-                                            <span class="sub-item">Settings</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    @endif
-                    @if ($mod['membership'])
-                        <li
-                            class="nav-item {{ request()->routeIs('categories') ? 'active' : '' }} {{ request()->routeIs('courses') ? 'active' : '' }} {{ request()->routeIs('lessons') ? 'active' : '' }}">
-                            <a data-toggle="collapse" href="#meme">
-                                <i class="fa fa-book-reader"></i>
-                                <p>Membership</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="meme">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="{{ route('categories') }}">
-                                            <span class="sub-item">Categories</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('courses') }}">
-                                            <span class="sub-item">Courses</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('less.nocourse') }}">
-                                            <span class="sub-item">Lessons</span>
-                                        </a>
-                                    </li>
+                                    @if (Auth('admin')->User()->type == 'Super Admin')
+                                        <li>
+                                            <a href="{{ url('/admin/dashboard/task') }}">
+                                                <span class="sub-item">Create Task</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('/admin/dashboard/mtask') }}">
+                                                <span class="sub-item">Manage Tasks</span>
+                                            </a>
+                                        </li>
+                                    @endif
+                                    @if (Auth('admin')->User()->type != 'Super Admin')
+                                        <li>
+                                            <a href="{{ url('/admin/dashboard/viewtask') }}">
+                                                <span class="sub-item">View my Tasks</span>
+                                            </a>
+                                        </li>
+                                    @endif
+        
+                                    @if (Auth('admin')->User()->type == 'Super Admin' || Auth('admin')->User()->type == 'Admin')
+                                        <li class=" {{ request()->routeIs('leads') ? 'active' : '' }}">
+                                            <a href="{{ url('/admin/dashboard/leads') }}">
+                                                <!-- <i class="fas fa-user-slash " aria-hidden="true"></i> -->
+                                                <span class="sub-item">Leads</span>
+                                            </a>
+                                        </li>
+        
+                                        <li class=" {{ request()->routeIs('emailservices') ? 'active' : '' }}">
+                                            <a href="{{ route('emailservices') }}">
+                                                <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
+                                                <span class="sub-item">Email Services</span>
+                                            </a>
+                                        </li>
+                                    @endif
+        
+                                    @if (Auth('admin')->User()->type == 'Rentention Agent' || Auth('admin')->User()->type == 'Conversion Agent')
+                                        <li class="nav-item {{ request()->routeIs('leadsassign') ? 'active' : '' }}">
+                                            <a href="{{ url('/admin/dashboard/leadsassign') }}">
+                                                <i class="fas fa-user-slash " aria-hidden="true"></i>
+                                                <p>My Leads</p>
+                                            </a>
+                                        </li>
+                                    @endif
+        
                                 </ul>
                             </div>
                         </li>
                     @endif
                 @endif
-                <li
-                    class="nav-item {{ request()->routeIs('task') ? 'active' : '' }} {{ request()->routeIs('mtask') ? 'active' : '' }} {{ request()->routeIs('viewtask') ? 'active' : '' }}">
-                    <a data-toggle="collapse" href="#task">
-                        <i class="fas fa-align-center"></i>
-                        <p>CRM</p>
-                        <span class="caret"></span>
-                    </a>
-                    <div class="collapse" id="task">
-                        <ul class="nav nav-collapse">
-                            @if (Auth('admin')->User()->type == 'Super Admin')
-                                <li>
-                                    <a href="{{ url('/admin/dashboard/task') }}">
-                                        <span class="sub-item">Create Task</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('/admin/dashboard/mtask') }}">
-                                        <span class="sub-item">Manage Tasks</span>
-                                    </a>
-                                </li>
-                            @endif
-                            @if (Auth('admin')->User()->type != 'Super Admin')
-                                <li>
-                                    <a href="{{ url('/admin/dashboard/viewtask') }}">
-                                        <span class="sub-item">View my Tasks</span>
-                                    </a>
-                                </li>
-                            @endif
-
-                            @if (Auth('admin')->User()->type == 'Super Admin' || Auth('admin')->User()->type == 'Admin')
-                                <li class=" {{ request()->routeIs('leads') ? 'active' : '' }}">
-                                    <a href="{{ url('/admin/dashboard/leads') }}">
-                                        <!-- <i class="fas fa-user-slash " aria-hidden="true"></i> -->
-                                        <span class="sub-item">Leads</span>
-                                    </a>
-                                </li>
-
-                                <li class=" {{ request()->routeIs('emailservices') ? 'active' : '' }}">
-                                    <a href="{{ route('emailservices') }}">
-                                        <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
-                                        <span class="sub-item">Email Services</span>
-                                    </a>
-                                </li>
-                            @endif
-
-                            @if (Auth('admin')->User()->type == 'Rentention Agent' || Auth('admin')->User()->type == 'Conversion Agent')
-                                <li class="nav-item {{ request()->routeIs('leadsassign') ? 'active' : '' }}">
-                                    <a href="{{ url('/admin/dashboard/leadsassign') }}">
-                                        <i class="fas fa-user-slash " aria-hidden="true"></i>
-                                        <p>My Leads</p>
-                                    </a>
-                                </li>
-                            @endif
-
-                        </ul>
-                    </div>
-                </li>
                
                 @if (Auth('admin')->User()->type == 'Super Admin')
                     <li
@@ -300,7 +319,7 @@
                     </li>
                 @endif
 
-                @if (Auth('admin')->User()->type != 'Conversion Agent')
+                @if (Auth('admin')->User()->type == 'Super Admin')
                     <li class="nav-item {{ request()->routeIs('aboutonlinetrade') ? 'active' : '' }}">
                         <a href="{{ url('/admin/dashboard/about') }}">
                             <i class=" fa fa-info-circle" aria-hidden="true"></i>

@@ -98,8 +98,9 @@
                                                     <strong>{{ $payment_mode->name }} Address:</strong>
                                                 </h6>
                                                 <div class="mb-3 form-group">
-                                                    <input type="text" class="form-control readonly"
-                                                        value="{{ $payment_mode->wallet_address }}" readonly>
+                                                    <div class="border p-2 rounded-lg">
+                                                        {{ $payment_mode->wallet_address }}
+                                                    </div>
                                                     <small class=""><strong>Network Type:</strong>
                                                         {{ $payment_mode->network }}
                                                     </small>

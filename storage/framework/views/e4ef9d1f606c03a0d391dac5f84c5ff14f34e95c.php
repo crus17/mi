@@ -30,9 +30,13 @@
     <div class="mt-2 mb-5 row">
         <div class="col-12">
             <div class="card p-md-5 p-2 shadow-lg ">
+                <?php if(Auth('admin')->User()->type != 'Admin'): ?>
                 <ul class="nav nav-pills">
                     <li class="nav-item">
-                        <a href="#module" class="nav-link active" data-toggle="tab">Modules</a>
+                        <a href="#basic" class="nav-link active" data-toggle="tab">Basic</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#module" class="nav-link" data-toggle="tab">Modules</a>
                     </li>
                     <li class="nav-item">
                         <a href="#info" class="nav-link " data-toggle="tab">Website Information</a>
@@ -47,20 +51,24 @@
                         <a href="#display" class="nav-link" data-toggle="tab">Theme/Display</a>
                     </li>
                 </ul>
+                <?php endif; ?>
                 <div class="tab-content">
-                    <div class="tab-pane fade show active" id="module">
+                    <div class="tab-pane fade show active" id="basic">
+                        <?php echo $__env->make('admin.Settings.AppSettings.basic', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    </div>
+                    <div class="tab-pane fade show" id="module">
                         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('admin.software-module', [])->html();
-} elseif ($_instance->childHasBeenRendered('KRug8xj')) {
-    $componentId = $_instance->getRenderedChildComponentId('KRug8xj');
-    $componentTag = $_instance->getRenderedChildComponentTagName('KRug8xj');
+} elseif ($_instance->childHasBeenRendered('QRr9K5G')) {
+    $componentId = $_instance->getRenderedChildComponentId('QRr9K5G');
+    $componentTag = $_instance->getRenderedChildComponentTagName('QRr9K5G');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('KRug8xj');
+    $_instance->preserveRenderedChild('QRr9K5G');
 } else {
     $response = \Livewire\Livewire::mount('admin.software-module', []);
     $html = $response->html();
-    $_instance->logRenderedChild('KRug8xj', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('QRr9K5G', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

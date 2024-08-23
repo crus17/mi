@@ -80,151 +80,170 @@
                         </a>
                     </li>
 
-                    <?php if($mod['subscription']): ?>
+                    <?php if(Auth('admin')->User()->type == 'Admin'): ?>
                         <li
-                            class="nav-item <?php echo e(request()->routeIs('msubtrade') ? 'active' : ''); ?> <?php echo e(request()->routeIs('tsettings') ? 'active' : ''); ?> <?php echo e(request()->routeIs('tacnts') ? 'active' : ''); ?> <?php echo e(request()->routeIs('subview') ? 'active' : ''); ?>">
-                            <a data-toggle="collapse" href="#mgacnt">
-                                <i class="fa fa-sync-alt"></i>
-                                <p>MAM - Copytrading</p>
-                                <span class="caret"></span>
+                            class="nav-item <?php echo e(request()->routeIs('paymentview') ? 'active' : ''); ?> <?php echo e(request()->routeIs('viewkyc') ? 'active' : ''); ?>">
+                            <a href="<?php echo e(route('paymentview')); ?>">
+                                <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                <p>Payment Settings</p>
                             </a>
-                            <div class="collapse" id="mgacnt">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="<?php echo e(route('msubtrade')); ?>">
-                                            <span class="sub-item">Trading-Accounts</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo e(route('tsettings')); ?>">
-                                            <span class="sub-item">Trading Settings</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo e(route('subview')); ?>">
-                                            <span class="sub-item">Fee Settings</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                        </li>
+                        <li
+                            class="nav-item <?php echo e(request()->routeIs('appsettingshow') ? 'active' : ''); ?> <?php echo e(request()->routeIs('viewkyc') ? 'active' : ''); ?>">
+                            <a href="<?php echo e(route('appsettingshow')); ?>">
+                                <i class="fa fa-cog" aria-hidden="true"></i>
+                                <p>App Settings</p>
+                            </a>
                         </li>
                     <?php endif; ?>
-                    <?php if($mod['signal']): ?>
+
+                    <?php if(Auth('admin')->User()->type == 'Super Admin'): ?>
+                        <?php if($mod['subscription']): ?>
+                            <li
+                                class="nav-item <?php echo e(request()->routeIs('msubtrade') ? 'active' : ''); ?> <?php echo e(request()->routeIs('tsettings') ? 'active' : ''); ?> <?php echo e(request()->routeIs('tacnts') ? 'active' : ''); ?> <?php echo e(request()->routeIs('subview') ? 'active' : ''); ?>">
+                                <a data-toggle="collapse" href="#mgacnt">
+                                    <i class="fa fa-sync-alt"></i>
+                                    <p>MAM - Copytrading</p>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="collapse" id="mgacnt">
+                                    <ul class="nav nav-collapse">
+                                        <li>
+                                            <a href="<?php echo e(route('msubtrade')); ?>">
+                                                <span class="sub-item">Trading-Accounts</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="<?php echo e(route('tsettings')); ?>">
+                                                <span class="sub-item">Trading Settings</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="<?php echo e(route('subview')); ?>">
+                                                <span class="sub-item">Fee Settings</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        <?php endif; ?>
+                        <?php if($mod['signal']): ?>
+                            <li
+                                class="nav-item <?php echo e(request()->routeIs('signals') ? 'active' : ''); ?> <?php echo e(request()->routeIs('signal.settings') ? 'active' : ''); ?> <?php echo e(request()->routeIs('signal.subs') ? 'active' : ''); ?>">
+                                <a data-toggle="collapse" href="#signals">
+                                    <i class="fa fa-signal"></i>
+                                    <p>Signal Provider</p>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="collapse" id="signals">
+                                    <ul class="nav nav-collapse">
+                                        <li>
+                                            <a href="<?php echo e(route('signals')); ?>">
+                                                <span class="sub-item">Trade Signals</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="<?php echo e(route('signal.subs')); ?>">
+                                                <span class="sub-item">Subscribers</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="<?php echo e(route('signal.settings')); ?>">
+                                                <span class="sub-item">Settings</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        <?php endif; ?>
+                        <?php if($mod['membership']): ?>
+                            <li
+                                class="nav-item <?php echo e(request()->routeIs('categories') ? 'active' : ''); ?> <?php echo e(request()->routeIs('courses') ? 'active' : ''); ?> <?php echo e(request()->routeIs('lessons') ? 'active' : ''); ?>">
+                                <a data-toggle="collapse" href="#meme">
+                                    <i class="fa fa-book-reader"></i>
+                                    <p>Membership</p>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="collapse" id="meme">
+                                    <ul class="nav nav-collapse">
+                                        <li>
+                                            <a href="<?php echo e(route('categories')); ?>">
+                                                <span class="sub-item">Categories</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="<?php echo e(route('courses')); ?>">
+                                                <span class="sub-item">Courses</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="<?php echo e(route('less.nocourse')); ?>">
+                                                <span class="sub-item">Lessons</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        <?php endif; ?>
                         <li
-                            class="nav-item <?php echo e(request()->routeIs('signals') ? 'active' : ''); ?> <?php echo e(request()->routeIs('signal.settings') ? 'active' : ''); ?> <?php echo e(request()->routeIs('signal.subs') ? 'active' : ''); ?>">
-                            <a data-toggle="collapse" href="#signals">
-                                <i class="fa fa-signal"></i>
-                                <p>Signal Provider</p>
+                            class="nav-item <?php echo e(request()->routeIs('task') ? 'active' : ''); ?> <?php echo e(request()->routeIs('mtask') ? 'active' : ''); ?> <?php echo e(request()->routeIs('viewtask') ? 'active' : ''); ?>">
+                            <a data-toggle="collapse" href="#task">
+                                <i class="fas fa-align-center"></i>
+                                <p>CRM</p>
                                 <span class="caret"></span>
                             </a>
-                            <div class="collapse" id="signals">
+                            <div class="collapse" id="task">
                                 <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="<?php echo e(route('signals')); ?>">
-                                            <span class="sub-item">Trade Signals</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo e(route('signal.subs')); ?>">
-                                            <span class="sub-item">Subscribers</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo e(route('signal.settings')); ?>">
-                                            <span class="sub-item">Settings</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    <?php endif; ?>
-                    <?php if($mod['membership']): ?>
-                        <li
-                            class="nav-item <?php echo e(request()->routeIs('categories') ? 'active' : ''); ?> <?php echo e(request()->routeIs('courses') ? 'active' : ''); ?> <?php echo e(request()->routeIs('lessons') ? 'active' : ''); ?>">
-                            <a data-toggle="collapse" href="#meme">
-                                <i class="fa fa-book-reader"></i>
-                                <p>Membership</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="meme">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="<?php echo e(route('categories')); ?>">
-                                            <span class="sub-item">Categories</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo e(route('courses')); ?>">
-                                            <span class="sub-item">Courses</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo e(route('less.nocourse')); ?>">
-                                            <span class="sub-item">Lessons</span>
-                                        </a>
-                                    </li>
+                                    <?php if(Auth('admin')->User()->type == 'Super Admin'): ?>
+                                        <li>
+                                            <a href="<?php echo e(url('/admin/dashboard/task')); ?>">
+                                                <span class="sub-item">Create Task</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="<?php echo e(url('/admin/dashboard/mtask')); ?>">
+                                                <span class="sub-item">Manage Tasks</span>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+                                    <?php if(Auth('admin')->User()->type != 'Super Admin'): ?>
+                                        <li>
+                                            <a href="<?php echo e(url('/admin/dashboard/viewtask')); ?>">
+                                                <span class="sub-item">View my Tasks</span>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+        
+                                    <?php if(Auth('admin')->User()->type == 'Super Admin' || Auth('admin')->User()->type == 'Admin'): ?>
+                                        <li class=" <?php echo e(request()->routeIs('leads') ? 'active' : ''); ?>">
+                                            <a href="<?php echo e(url('/admin/dashboard/leads')); ?>">
+                                                <!-- <i class="fas fa-user-slash " aria-hidden="true"></i> -->
+                                                <span class="sub-item">Leads</span>
+                                            </a>
+                                        </li>
+        
+                                        <li class=" <?php echo e(request()->routeIs('emailservices') ? 'active' : ''); ?>">
+                                            <a href="<?php echo e(route('emailservices')); ?>">
+                                                <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
+                                                <span class="sub-item">Email Services</span>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+        
+                                    <?php if(Auth('admin')->User()->type == 'Rentention Agent' || Auth('admin')->User()->type == 'Conversion Agent'): ?>
+                                        <li class="nav-item <?php echo e(request()->routeIs('leadsassign') ? 'active' : ''); ?>">
+                                            <a href="<?php echo e(url('/admin/dashboard/leadsassign')); ?>">
+                                                <i class="fas fa-user-slash " aria-hidden="true"></i>
+                                                <p>My Leads</p>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+        
                                 </ul>
                             </div>
                         </li>
                     <?php endif; ?>
                 <?php endif; ?>
-                <li
-                    class="nav-item <?php echo e(request()->routeIs('task') ? 'active' : ''); ?> <?php echo e(request()->routeIs('mtask') ? 'active' : ''); ?> <?php echo e(request()->routeIs('viewtask') ? 'active' : ''); ?>">
-                    <a data-toggle="collapse" href="#task">
-                        <i class="fas fa-align-center"></i>
-                        <p>CRM</p>
-                        <span class="caret"></span>
-                    </a>
-                    <div class="collapse" id="task">
-                        <ul class="nav nav-collapse">
-                            <?php if(Auth('admin')->User()->type == 'Super Admin'): ?>
-                                <li>
-                                    <a href="<?php echo e(url('/admin/dashboard/task')); ?>">
-                                        <span class="sub-item">Create Task</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo e(url('/admin/dashboard/mtask')); ?>">
-                                        <span class="sub-item">Manage Tasks</span>
-                                    </a>
-                                </li>
-                            <?php endif; ?>
-                            <?php if(Auth('admin')->User()->type != 'Super Admin'): ?>
-                                <li>
-                                    <a href="<?php echo e(url('/admin/dashboard/viewtask')); ?>">
-                                        <span class="sub-item">View my Tasks</span>
-                                    </a>
-                                </li>
-                            <?php endif; ?>
-
-                            <?php if(Auth('admin')->User()->type == 'Super Admin' || Auth('admin')->User()->type == 'Admin'): ?>
-                                <li class=" <?php echo e(request()->routeIs('leads') ? 'active' : ''); ?>">
-                                    <a href="<?php echo e(url('/admin/dashboard/leads')); ?>">
-                                        <!-- <i class="fas fa-user-slash " aria-hidden="true"></i> -->
-                                        <span class="sub-item">Leads</span>
-                                    </a>
-                                </li>
-
-                                <li class=" <?php echo e(request()->routeIs('emailservices') ? 'active' : ''); ?>">
-                                    <a href="<?php echo e(route('emailservices')); ?>">
-                                        <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
-                                        <span class="sub-item">Email Services</span>
-                                    </a>
-                                </li>
-                            <?php endif; ?>
-
-                            <?php if(Auth('admin')->User()->type == 'Rentention Agent' || Auth('admin')->User()->type == 'Conversion Agent'): ?>
-                                <li class="nav-item <?php echo e(request()->routeIs('leadsassign') ? 'active' : ''); ?>">
-                                    <a href="<?php echo e(url('/admin/dashboard/leadsassign')); ?>">
-                                        <i class="fas fa-user-slash " aria-hidden="true"></i>
-                                        <p>My Leads</p>
-                                    </a>
-                                </li>
-                            <?php endif; ?>
-
-                        </ul>
-                    </div>
-                </li>
                
                 <?php if(Auth('admin')->User()->type == 'Super Admin'): ?>
                     <li
@@ -301,7 +320,7 @@
                     </li>
                 <?php endif; ?>
 
-                <?php if(Auth('admin')->User()->type != 'Conversion Agent'): ?>
+                <?php if(Auth('admin')->User()->type == 'Super Admin'): ?>
                     <li class="nav-item <?php echo e(request()->routeIs('aboutonlinetrade') ? 'active' : ''); ?>">
                         <a href="<?php echo e(url('/admin/dashboard/about')); ?>">
                             <i class=" fa fa-info-circle" aria-hidden="true"></i>

@@ -111,7 +111,7 @@
                 <span class="pt-2 btn-inner--icon d-block">My Plans</span>
             </a>
         <?php endif; ?>
-        <?php if($mod['membership']): ?>
+        <!-- <?php if($mod['membership']): ?>
             <a href="<?php echo e(route('user.courses')); ?>"
                 class="text-sm btn btn-square <?php echo e(request()->routeIs('user.mycourses') ? 'active' : ''); ?> <?php echo e(request()->routeIs('user.courses') ? 'active' : ''); ?> <?php echo e(request()->routeIs('user.course.details') ? 'active' : ''); ?>">
                 <span class="btn-inner--icon d-block"><i class="fas fa-graduation-cap fa-2x"></i></span>
@@ -126,7 +126,7 @@
                 </span>
                 <span class="pt-2 btn-inner--icon d-block">Trade Signals</span>
             </a>
-        <?php endif; ?>
+        <?php endif; ?> -->
         <a href="<?php echo e(route('referuser')); ?>"
             class="text-sm btn btn-square <?php echo e(request()->routeIs('referuser') ? 'active' : ''); ?>">
             <span class="btn-inner--icon d-block"><i class="fas fa-retweet fa-2x"></i></span>
